@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="hprt-printer-plugin" version="0.0.1">
+    <name>HPRT PRINTER PLUGIN</name>
+    <description>HPRT PRINTER PLUGIN</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,device</keywords>
+    <js-module src="www/hrpt_printer.js" name="hrpt_printer">
+        <clobbers target="hrpt" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="hprt_printer">
+                <param name="ios-package" value="CDVHPRTPrinter"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVDevice.h" />
+        <source-file src="src/ios/CDVDevice.m" />
+    </platform>
+</plugin>
